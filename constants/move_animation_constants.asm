@@ -3,7 +3,7 @@
 	const_def $C0
 DEF FIRST_SE_ID EQU const_value
 	const_skip $18
-	const SE_WAVY_SCREEN               ; $D8 used in Psywave/Night Shade/Psychic etc.
+	const SE_WAVY_SCREEN               ; $D8 used in Dragon Wave/Night Shade/Psychic etc. TODO
 	const SE_SUBSTITUTE_MON            ; $D9 used in Substitute (turns the pokemon into a mini sprite)
 	const SE_SHAKE_BACK_AND_FORTH      ; $DA used in Double Team
 	const SE_SLIDE_ENEMY_MON_OFF       ; $DB used in Whirlwind

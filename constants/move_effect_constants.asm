@@ -45,7 +45,7 @@
 	const OHKO_EFFECT                ; $26 moves like Horn Drill
 	const CHARGE_EFFECT              ; $27 moves like Solar Beam
 	const SUPER_FANG_EFFECT          ; $28
-	const SPECIAL_DAMAGE_EFFECT      ; $29 Seismic Toss, Night Shade, Sonic Boom, Dragon Rage, Psywave
+	const SPECIAL_DAMAGE_EFFECT      ; $29 Seismic Toss, Night Shade, Sonic Boom, Dragon Rage
 	const TRAPPING_EFFECT            ; $2A moves like Wrap
 	const FLY_EFFECT                 ; $2B
 	const ATTACK_TWICE_EFFECT        ; $2C
@@ -76,7 +76,7 @@
 	const DEFENSE_DOWN_SIDE_EFFECT   ; $45
 	const SPEED_DOWN_SIDE_EFFECT     ; $46
 	const SPECIAL_DOWN_SIDE_EFFECT   ; $47
-	const_skip                       ; $48
+	const TRI_ATTACK_EFFECT	         ; $48
 	const_skip                       ; $49
 	const_skip                       ; $4A
 	const_skip                       ; $4B

@@ -9,7 +9,7 @@ SeafoamIslandsB1FWildMons:
 	db 18, ZUBAT
 	db 28, KINGLER
 	db 22, SEEL
-	db 26, SEEL
+	db 26, JYNX
 	end_grass_wildmons
 
 	def_water_wildmons 0 ; encounter rate

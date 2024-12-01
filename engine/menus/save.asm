@@ -154,7 +154,7 @@ SaveSAV:
 	call SaveSAVtoSRAM
 	ld hl, SavingText
 	call PrintText
-	ld c, 128
+	ld c, 60 ; NEW FEATURE reduce save time delay
 	call DelayFrames
 	ld hl, GameSavedText
 	call PrintText
@@ -163,7 +163,7 @@ SaveSAV:
 	ld a, SFX_SAVE
 	call PlaySoundWaitForCurrent
 	call WaitForSoundToFinish
-	ld c, 30
+	ld c, 15
 	call DelayFrames
 	ret
 

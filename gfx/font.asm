@@ -31,3 +31,6 @@ WorldMapTileGraphicsEnd:
 
 PlayerCharacterTitleGraphics: INCBIN "gfx/title/player.2bpp"
 PlayerCharacterTitleGraphicsEnd:
+
+EXPBarGraphics::  INCBIN "gfx/battle/exp_bar.2bpp" ; NEW FEATURE exp bar
+EXPBarGraphicsEnd::

@@ -411,10 +411,6 @@ MoveAnimationTiles2:
 MoveAnimationTiles1:
 	INCBIN "gfx/battle/move_anim_1.2bpp"
 
-SlotMachineTiles2:
-	INCBIN "gfx/slots/slots_2.2bpp"
-SlotMachineTiles2End:
-
 MoveAnimation:
 	push hl
 	push de
@@ -1413,9 +1409,7 @@ AdjustOAMBlockYPos2:
 	add b
 	cp 112
 	jr c, .skipSettingPreviousEntrysAttribute
-	dec hl
-	ld a, 160 ; bug, sets previous OAM entry's attribute
-	ld [hli], a
+	ld a, 160 ; bug, sets previous OAM entry's attribute : BUGFIX
 .skipSettingPreviousEntrysAttribute
 	ld [hl], a
 	add hl, de
@@ -1956,7 +1950,7 @@ CopyTempPicToMonPic:
 	jp CopyVideoData
 
 AnimationWavyScreen:
-; used in Psywave/Psychic etc.
+; used in Dragon Wave/Psychic etc.
 	ld hl, vBGMap0
 	call BattleAnimCopyTileMapToVRAM
 	call Delay3
@@ -1969,6 +1963,8 @@ AnimationWavyScreen:
 	ld c, $ff
 	ld hl, WavyScreenLineOffsets
 .loop
+	ld a, [hl] ; BUGFIX
+	ldh [hSCX], a
 	push hl
 .innerLoop
 	call WavyScreen_SetSCX
@@ -1985,6 +1981,7 @@ AnimationWavyScreen:
 	dec c
 	jr nz, .loop
 	xor a
+	ldh [hSCX], a ; BUGFIX
 	ldh [hWY], a
 	call SaveScreenTilesToBuffer2
 	call ClearScreen

@@ -205,6 +205,7 @@ INCLUDE "engine/events/hidden_objects/indigo_plateau_hq.asm"
 SECTION "Battle Engine 7", ROMX
 
 INCLUDE "engine/battle/experience.asm"
+INCLUDE "engine/gfx/exp_bar.asm" ; NEW FEATURE exp bar
 
 
 SECTION "Diploma", ROMX

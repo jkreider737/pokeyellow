@@ -681,7 +681,7 @@ SwitchPartyMon::
 	call SwitchPartyMon_ClearGfx
 	ld a, [wCurrentMenuItem]
 	call SwitchPartyMon_ClearGfx
-	jp RedrawPartyMenu_
+	jp RedrawPartyMenu_ReloadSprites ; NEW FEATURE party mon icons
 
 SwitchPartyMon_ClearGfx:
 	push af

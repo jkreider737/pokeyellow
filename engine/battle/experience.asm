@@ -151,6 +151,7 @@ GainExperience:
 	xor a ; PLAYER_PARTY_DATA
 	ld [wMonDataLocation], a
 	call LoadMonData
+	call AnimateEXPBar ; NEW FEATURE exp bar
 	pop hl
 	ld bc, wPartyMon1Level - wPartyMon1Exp
 	add hl, bc
@@ -160,6 +161,7 @@ GainExperience:
 	ld a, [hl] ; current level
 	cp d
 	jp z, .nextMon ; if level didn't change, go to next mon
+	call KeepEXPBarFull ; NEW FEATURE exp bar
 	ld a, [wCurEnemyLevel]
 	push af
 	push hl
@@ -251,6 +253,7 @@ GainExperience:
 	xor a ; PLAYER_PARTY_DATA
 	ld [wMonDataLocation], a
 	call LoadMonData
+	call AnimateEXPBarAgain ; NEW FEATURE exp bar
 	ld d, $1
 	callfar PrintStatsBox
 	call WaitForTextScrollButtonPress

@@ -2274,7 +2274,7 @@ wRoute18Gate1FCurScript:: db
 	ds 78
 wGameProgressFlagsEnd::
 
-	ds 56
+	ds 45
 
 wObtainedHiddenItemsFlags:: flag_array MAX_HIDDEN_ITEMS
 
@@ -2486,6 +2486,12 @@ ENDR
 wBoxMonNicksEnd::
 
 wBoxDataEnd::
+
+wEXPBarPixelLength::  ds 1 ; NEW FEATURE exp bar
+wEXPBarBaseEXP::      ds 3
+wEXPBarCurEXP::       ds 3
+wEXPBarNeededEXP::    ds 3
+wEXPBarKeepFullFlag:: ds 1
 
 
 SECTION "GBC Palette Data", WRAM0

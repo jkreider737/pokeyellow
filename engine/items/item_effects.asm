@@ -64,7 +64,7 @@ ItemUsePtrTable:
 	dw UnusableItem      ; BIKE_VOUCHER
 	dw ItemUseXAccuracy  ; X_ACCURACY
 	dw ItemUseEvoStone   ; LEAF_STONE
-	dw ItemUseCardKey    ; CARD_KEY
+	dw UnusableItem      ; CARD_KEY
 	dw UnusableItem      ; NUGGET
 	dw UnusableItem      ; ITEM_32
 	dw ItemUsePokeDoll   ; POKE_DOLL
@@ -488,8 +488,7 @@ ItemUseBall:
 	ld hl, wEnemyBattleStatus3
 	bit TRANSFORMED, [hl]
 	jr z, .notTransformed
-	ld a, DITTO
-	ld [wEnemyMonSpecies2], a
+	; BUGFIX
 	jr .skip6
 
 .notTransformed
@@ -1008,7 +1007,10 @@ ItemUseMedicine:
 	ld de, wBattleMonStats
 	ld bc, NUM_STATS * 2
 	call CopyData ; copy party stats to in-battle stat data
-	predef DoubleOrHalveSelectedStats
+	xor a ; BUGFIX
+	ld [wCalculateWhoseStats], a
+	callfar CalculateModifiedStats
+	callfar ApplyBadgeStatBoosts
 	jp .doneHealing
 
 .healHP
@@ -1694,64 +1696,6 @@ ItemUseXAccuracy:
 	callabd_ModifyPikachuHappiness PIKAHAPPY_USEDXITEM
 	jp PrintItemUseTextAndRemoveItem
 
-; This function is bugged and never works. It always jumps to ItemUseNotTime.
-; The Card Key is handled in a different way.
-ItemUseCardKey:
-	xor a
-	ld [wUnusedCardKeyGateID], a
-	call GetTileAndCoordsInFrontOfPlayer
-	ld a, [GetTileAndCoordsInFrontOfPlayer]
-	cp $18
-	jr nz, .next0
-	ld hl, CardKeyTable1
-	jr .next1
-
-.next0
-	cp $24
-	jr nz, .next2
-	ld hl, CardKeyTable2
-	jr .next1
-
-.next2
-	cp $5e
-	jp nz, ItemUseNotTime
-	ld hl, CardKeyTable3
-.next1
-	ld a, [wCurMap]
-	ld b, a
-.loop
-	ld a, [hli]
-	cp -1
-	jp z, ItemUseNotTime
-	cp b
-	jr nz, .nextEntry1
-	ld a, [hli]
-	cp d
-	jr nz, .nextEntry2
-	ld a, [hli]
-	cp e
-	jr nz, .nextEntry3
-	ld a, [hl]
-	ld [wUnusedCardKeyGateID], a
-	jr .done
-
-.nextEntry1
-	inc hl
-.nextEntry2
-	inc hl
-.nextEntry3
-	inc hl
-	jr .loop
-
-.done
-	ld hl, ItemUseText00
-	call PrintText
-	ld hl, wStatusFlags1
-	set BIT_UNUSED_CARD_KEY, [hl] ; never checked
-	ret
-
-INCLUDE "data/events/card_key_coords.asm"
-
 ItemUsePokeDoll:
 	ld a, [wIsInBattle]
 	dec a
@@ -2026,8 +1970,27 @@ CoinCaseNumCoinsText:
 ItemUseOldRod:
 	call FishingInit
 	jp c, ItemUseNotTime
-	lb bc, 5, MAGIKARP
-	ld a, $1 ; set bite
+.RandomLoop ; CUSTOM FEATURE old rod encounters
+	call Random
+	srl a
+	jr c, .SetBite
+	and %11
+	cp 2
+	jr nc, .RandomLoop
+	; choose which monster appears
+	ld hl, OldRodMons
+	add a
+	ld c, a
+	ld b, 0
+	add hl, bc
+	ld b, [hl]
+	inc hl
+	ld c, [hl]
+	and a
+.SetBite
+	ld a, 0
+	rla
+	xor 1
 	jr RodResponse
 
 ItemUseGoodRod:
@@ -2325,6 +2288,7 @@ ItemUsePPRestore:
 ; are used to count how many PP Ups have been used on the move. So, Max Ethers
 ; and Max Elixirs will not be detected as having no effect on a move with full
 ; PP if the move has had any PP Ups used on it.
+	and %00111111 ; lower 6 bits store current PP : BUGFIX
 	cp b ; does current PP equal max PP?
 	ret z
 	jr .storeNewAmount
