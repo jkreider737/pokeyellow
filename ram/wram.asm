@@ -1268,6 +1268,7 @@ wItemPrices:: dw
 wCurPartySpecies::
 wCurItem::
 wCurListMenuItem::
+wGhostBattleTemp:: ; idk bro, might be same as cur party species
 	db
 
 ; which pokemon you selected
