@@ -148,7 +148,7 @@ AttackAnimationPointers:
 	dw DizzyPunchAnim
 	dw SporeAnim
 	dw FlashAnim
-	dw PsywaveAnim
+	dw RockBlastAnim
 	dw SplashAnim
 	dw AcidArmorAnim
 	dw CrabHammerAnim
@@ -1057,9 +1057,18 @@ FlashAnim:
 	battle_anim NO_MOVE, SE_RESET_SCREEN_PALETTE
 	db -1 ; end
 
-PsywaveAnim:
-	battle_anim SUPERSONIC, SUBANIM_0_SOUND_WAVE, 0, 6
-	battle_anim CONFUSION, SE_WAVY_SCREEN
+RockBlastAnim:
+	battle_anim NO_MOVE, SE_BLINK_ENEMY_MON
+	battle_anim BARRAGE, SUBANIM_1_SPHERE_BIG, 1, 1
+	battle_anim NO_MOVE, SE_HIDE_ENEMY_MON_PIC
+	battle_anim NO_MOVE, SE_SLIDE_MON_OFF
+	battle_anim SEISMIC_TOSS, SUBANIM_1_SPHERE_BIG_RISE, 1, 2
+	battle_anim NO_MOVE, SE_DELAY_ANIMATION_10
+	battle_anim NO_MOVE, SE_DELAY_ANIMATION_10
+	battle_anim NO_MOVE, SE_SHOW_MON_PIC
+	battle_anim SEISMIC_TOSS, SUBANIM_1_SPHERE_BIG_FALL, 1, 1
+	battle_anim NO_MOVE, SE_SHOW_ENEMY_MON_PIC
+	battle_anim NO_MOVE, SE_SHAKE_SCREEN
 	db -1 ; end
 
 SplashAnim:

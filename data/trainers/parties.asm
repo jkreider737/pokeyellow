@@ -670,7 +670,7 @@ BlaineData:
 	db $FF, 48, NINETALES, 50, RAPIDASH, 54, ARCANINE, 50, MAGMAR, 0
 
 SabrinaData:
-	db $FF, 48, MR_MIME, 50, KADABRA, 48, HYPNO, 50, ALAKAZAM, 0
+	db $FF, 48, MR_MIME, 48, KADABRA, 48, HYPNO, 50, ALAKAZAM, 0
 
 GentlemanData:
 ; SS Anne 1F Rooms

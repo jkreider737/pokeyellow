@@ -716,9 +716,10 @@ ArbokEvosMoves:
 ; Learnset
 	db 10, POISON_STING
 	db 17, BITE
+	db 22, ACID
 	db 27, GLARE
 	db 36, SCREECH
-	db 47, ACID
+	db 40, SLUDGE
 	db 0
 
 ParasectEvosMoves:
@@ -935,6 +936,7 @@ DragoniteEvosMoves:
 	db 20, AGILITY
 	db 35, SLAM
 	db 45, DRAGON_RAGE
+	db 56, WING_ATTACK
 	db 60, HYPER_BEAM
 	db 0
 
@@ -1343,8 +1345,8 @@ ZubatEvosMoves:
 	db 10, SUPERSONIC
 	db 15, BITE
 	db 21, CONFUSE_RAY
-	db 28, WING_ATTACK
-	db 36, HAZE
+	db 23, WING_ATTACK
+	db 30, SLUDGE
 	db 0
 
 EkansEvosMoves:
@@ -1522,7 +1524,7 @@ ButterfreeEvosMoves:
 	db 18, SUPERSONIC
 	db 23, WHIRLWIND
 	db 28, GUST
-	db 34, PSYBEAM
+	db 32, PSYBEAM
 	db 0
 
 MachampEvosMoves:
@@ -1572,8 +1574,8 @@ GolbatEvosMoves:
 	db 10, SUPERSONIC
 	db 15, BITE
 	db 21, CONFUSE_RAY
-	db 32, WING_ATTACK
-	db 43, HAZE
+	db 27, WING_ATTACK
+	db 32, SLUDGE
 	db 0
 
 MewtwoEvosMoves:
@@ -2016,10 +2018,10 @@ CharmanderEvosMoves:
 ; Learnset
 	db 9, EMBER
 	db 15, LEER
-	db 22, RAGE
+	db 22, FIRE_SPIN
 	db 30, SLASH
 	db 38, FLAMETHROWER
-	db 46, FIRE_SPIN
+	db 46, RAGE
 	db 0
 
 SquirtleEvosMoves:
@@ -2042,10 +2044,10 @@ CharmeleonEvosMoves:
 ; Learnset
 	db 9, EMBER
 	db 15, LEER
-	db 24, RAGE
+	db 24, FIRE_SPIN
 	db 33, SLASH
 	db 42, FLAMETHROWER
-	db 56, FIRE_SPIN
+	db 56, RAGE
 	db 0
 
 WartortleEvosMoves:
@@ -2067,10 +2069,10 @@ CharizardEvosMoves:
 ; Learnset
 	db 9, EMBER
 	db 15, LEER
-	db 24, RAGE
+	db 24, FIRE_SPIN
 	db 36, SLASH
 	db 46, FLAMETHROWER
-	db 55, FIRE_SPIN
+	db 55, WING_ATTACK
 	db 0
 
 MissingNoB5EvosMoves:

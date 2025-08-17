@@ -59,9 +59,7 @@ SpecialTrainerMoves:
 
 	db SABRINA, 1
 	db 1, 3, PSYBEAM
-	db 2, 1, KINESIS
-	db 2, 4, PSYWAVE
-	db 4, 1, PSYWAVE
+	db 2, 3, KINESIS
 	db 0
 
 	db GIOVANNI, 3
@@ -116,19 +114,16 @@ SpecialTrainerMoves:
 	db 0
 
 	db LANCE, 1
-	db 1, 1, SURF
-	db 2, 3, THUNDERBOLT
-	db 2, 4, WING_ATTACK
-	db 3, 1, BUBBLEBEAM
-	db 3, 1, WRAP
-	db 3, 3, WING_ATTACK
-	db 3, 4, ICE_BEAM
+	db 1, 3, RAZOR_WIND
+	db 2, 1, THUNDER_WAVE
+	db 2, 2, THUNDERBOLT
+	db 3, 2, ICE_BEAM
 	db 4, 1, WING_ATTACK
 	db 4, 2, ROCK_SLIDE
 	db 4, 3, FLY
 	db 5, 1, BLIZZARD
-	db 5, 2, FIRE_BLAST
-	db 5, 3, THUNDER
+	db 5, 3, FIRE_BLAST
+	db 5, 4, THUNDER
 	db 0
 
 	db RIVAL3, 1
