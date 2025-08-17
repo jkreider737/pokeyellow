@@ -5,7 +5,7 @@ PokemonMansionB1FWildMons:
 	db 37, RATICATE
 	db 40, RATICATE
 	db 41, MUK
-	db 43, RATICATE
+	db 43, MAGMAR
 	db 24, DITTO
 	db 46, RATICATE
 	db 18, DITTO

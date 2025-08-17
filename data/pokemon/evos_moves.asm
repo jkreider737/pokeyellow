@@ -1000,7 +1000,7 @@ MoltresEvosMoves:
 ; Evolutions
 	db 0
 ; Learnset
-	db 51, LEER
+	db 51, FLAMETHROWER
 	db 55, AGILITY
 	db 60, SKY_ATTACK
 	db 0
@@ -1356,9 +1356,10 @@ EkansEvosMoves:
 ; Learnset
 	db 10, POISON_STING
 	db 17, BITE
+	db 20, ACID
 	db 24, GLARE
 	db 31, SCREECH
-	db 38, ACID
+	db 38, SLUDGE
 	db 0
 
 ParasEvosMoves:

@@ -5,7 +5,7 @@ SeafoamIslandsB2FWildMons:
 	db 36, ZUBAT
 	db 27, GOLBAT
 	db 28, KINGLER
-	db 24, SEEL
+	db 24, JYNX
 	db 29, KRABBY
 	db 36, GOLBAT
 	db 31, SLOWPOKE
