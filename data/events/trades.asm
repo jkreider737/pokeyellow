@@ -9,14 +9,14 @@ TradeMons:
 	; "went and evolved" and also changed the trades to match. English
 	; Red/Blue uses the original JP Red/Green trades but with the JP Blue
 	; post-trade text.
-	db LICKITUNG,  DUGTRIO,  TRADE_DIALOGSET_CASUAL,    "GURIO@@@@@@"
+	db EKANS,      DRATINI,  TRADE_DIALOGSET_CASUAL,    "GURIO@@@@@@"
 	db CLEFAIRY,   MR_MIME,  TRADE_DIALOGSET_CASUAL,    "MILES@@@@@@"
 	db BUTTERFREE, BEEDRILL, TRADE_DIALOGSET_HAPPY,     "STINGER@@@@" ; unused
-	db KANGASKHAN, MUK,      TRADE_DIALOGSET_CASUAL,    "STICKY@@@@@"
+	db MUK,        KANGASKHAN,TRADE_DIALOGSET_CASUAL,    "BART@@@@@@@"
 	db MEW,        MEW,      TRADE_DIALOGSET_HAPPY,     "BART@@@@@@@" ; unused
 	db TANGELA,    PARASECT, TRADE_DIALOGSET_CASUAL,    "SPIKE@@@@@@"
 	db PIDGEOT,    PIDGEOT,  TRADE_DIALOGSET_EVOLUTION, "MARTY@@@@@@" ; unused
 	db GOLDUCK,    RHYDON,   TRADE_DIALOGSET_EVOLUTION, "BUFFY@@@@@@"
 	db GROWLITHE,  DEWGONG,  TRADE_DIALOGSET_HAPPY,     "CEZANNE@@@@"
-	db CUBONE,     MACHOKE,  TRADE_DIALOGSET_HAPPY,     "RICKY@@@@@@"
+	db JIGGLYPUFF, LICKITUNG,TRADE_DIALOGSET_HAPPY,     "RICKY@@@@@@"
 	assert_table_length NUM_NPC_TRADES
