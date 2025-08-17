@@ -6354,11 +6354,6 @@ LoadEnemyMonData:
 	ld a, ATKDEFDV_TRAINER
 	ld b, SPDSPCDV_TRAINER
 	jr z, .storeDVs
-	ld a, [wBattleType]
-	cp $4 ; is starter pikachu?
-	ld a, $ff ; starter pikachu always has perfect DVs
-	ld b, $ff
-	jr z, .storeDVs
 ; random DVs for wild mon
 	call BattleRandom
 	ld b, a

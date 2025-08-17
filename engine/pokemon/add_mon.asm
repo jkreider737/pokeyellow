@@ -110,7 +110,12 @@ _AddPartyMon::
 	and a ; is this a wild mon caught in battle?
 	jr nz, .copyEnemyMonData
 
-; Not wild.
+	ld a, [wCurPartySpecies]
+	cp STARTER_PIKACHU
+	ld a, $ff
+	ld b, $ff
+	jr z, .next4
+; Not wild. (gift/fossil pokemon? + starter in vanilla)
 	call Random ; generate random IVs
 	ld b, a
 	call Random
