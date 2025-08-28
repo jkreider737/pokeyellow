@@ -1058,17 +1058,8 @@ FlashAnim:
 	db -1 ; end
 
 RockBlastAnim:
-	battle_anim NO_MOVE, SE_BLINK_ENEMY_MON
-	battle_anim BARRAGE, SUBANIM_1_SPHERE_BIG, 1, 1
-	battle_anim NO_MOVE, SE_HIDE_ENEMY_MON_PIC
-	battle_anim NO_MOVE, SE_SLIDE_MON_OFF
-	battle_anim SEISMIC_TOSS, SUBANIM_1_SPHERE_BIG_RISE, 1, 2
-	battle_anim NO_MOVE, SE_DELAY_ANIMATION_10
-	battle_anim NO_MOVE, SE_DELAY_ANIMATION_10
-	battle_anim NO_MOVE, SE_SHOW_MON_PIC
-	battle_anim SEISMIC_TOSS, SUBANIM_1_SPHERE_BIG_FALL, 1, 1
-	battle_anim NO_MOVE, SE_SHOW_ENEMY_MON_PIC
-	battle_anim NO_MOVE, SE_SHAKE_SCREEN
+	battle_anim BARRAGE, SUBANIM_1_CIRCLE_BLACK_TOSS, 1, 3
+	battle_anim NO_MOVE, SUBANIM_0_STAR_HIGH, 0, 5
 	db -1 ; end
 
 SplashAnim:
